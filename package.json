@@ -1,15 +1,17 @@
 {
-  "name": "task_1",
+  "name": "homework-58",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "format": "npx prettier . --write",
     "dev": "node_modules/.bin/vite",
     "build": "node_modules/.bin/tsc && vite build",
     "lint": "node_modules/.bin/eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "node_modules/.bin/vite preview"
   },
   "dependencies": {
+    "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
