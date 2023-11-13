@@ -1,14 +1,15 @@
-import React from 'react';
-import Button from '../button/Button.tsx';
+import React, { FC } from 'react';
+import { IDemoForm } from '../../types';
 
-const DemoForm = () => {
+const DemoForm: FC<IDemoForm> = ({ onSubmit }) => {
   const testFn = (e: React.FormEvent) => {
     e.preventDefault();
+    onSubmit();
     console.log('test');
   };
 
   return (
-    <form className="border border-1 rounded-3 shadow px-3 py-3">
+    <form onSubmit={testFn} className="border border-1 rounded-3 shadow px-3 py-3">
       <h6></h6>
       <div className="form-check">
         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
@@ -16,7 +17,9 @@ const DemoForm = () => {
           Turn on modal window
         </label>
       </div>
-      <button onClick={testFn} className="btn btn-primary" type="submit">Confirm</button>
+      <button className="btn btn-primary" type="submit">
+        Confirm
+      </button>
     </form>
   );
 };
