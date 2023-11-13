@@ -6,12 +6,13 @@ export interface IButton {
   innerText: string;
 }
 
-export interface IDemoForm {
-  onSubmit: () => void;
-}
-
-export interface IModal extends React.PropsWithChildren{
+export interface IModal extends React.PropsWithChildren {
   show: boolean;
-  title: string
-  onClose: ()=> void
+  title: string;
+  onClose: () => void;
+}
+export interface IAlert extends React.PropsWithChildren {
+  type: 'primary' | 'success' | 'danger' | 'warning';
+  onDismiss?: () => void;
+  show: boolean;
 }
