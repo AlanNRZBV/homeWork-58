@@ -24,7 +24,7 @@ const DemoButtons = () => {
 
   return (
     <>
-      <div className="border border-1 rounded-3 shadow px-3 py-3 d-flex flex-column">
+      <div className="border border-1 rounded-3 shadow px-3 py-3 d-flex flex-column mb-3">
         <Button
           type="primary mb-2"
           onClick={toggleModal}
@@ -36,7 +36,11 @@ const DemoButtons = () => {
         <p>content goes here</p>
       </Modal>
       <Alert show={showAlert} type="danger" onDismiss={toggleAlert}>
-        Alert children
+        <p>Alert children inside P element</p>
+      </Alert>
+      <Alert show={showAlert} type="success">
+        <hr />
+        <p>Another alert children inside P element with HR above it</p>
       </Alert>
     </>
   );

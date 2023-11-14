@@ -3,15 +3,14 @@ import { ICustomModal } from '../../../types';
 import Button from '../../Button/Button.tsx';
 
 const Modal: FC<ICustomModal> = ({ show, title, onClose, children }) => {
+  const placeholderFn = () => {
+    alert('You have pressed continue');
+  };
 
-  const placeholderFn =()=>{
-    alert('You have pressed continue')
-  }
-
- const footerBtns = [
-   {type: 'primary', label: 'Continue', onClick: placeholderFn},
-   {type: 'danger', label: 'Close', onClick: onClose}
- ]
+  const footerBtns = [
+    { type: 'primary', label: 'Continue', onClick: placeholderFn },
+    { type: 'danger', label: 'Close', onClick: onClose },
+  ];
 
   return (
     <>
@@ -32,8 +31,12 @@ const Modal: FC<ICustomModal> = ({ show, title, onClose, children }) => {
             </div>
             <div className="modal-body">{children}</div>
             <div className="modal-footer">
-              {footerBtns.map((btn)=>(
-                <Button type={btn.type} onClick={btn.onClick} innerText={btn.label}/>
+              {footerBtns.map((btn) => (
+                <Button
+                  type={btn.type}
+                  onClick={btn.onClick}
+                  innerText={btn.label}
+                />
               ))}
             </div>
           </div>
