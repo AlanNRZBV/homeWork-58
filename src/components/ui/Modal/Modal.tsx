@@ -1,7 +1,18 @@
 import { FC } from 'react';
-import { IModal } from '../../../types';
+import { ICustomModal } from '../../../types';
+import Button from '../../Button/Button.tsx';
 
-const Modal: FC<IModal> = ({ show, title, onClose, children }) => {
+const Modal: FC<ICustomModal> = ({ show, title, onClose, children }) => {
+
+  const placeholderFn =()=>{
+    alert('You have pressed continue')
+  }
+
+ const footerBtns = [
+   {type: 'primary', label: 'Continue', onClick: placeholderFn},
+   {type: 'danger', label: 'Close', onClick: onClose}
+ ]
+
   return (
     <>
       <div
@@ -20,6 +31,11 @@ const Modal: FC<IModal> = ({ show, title, onClose, children }) => {
               ></button>
             </div>
             <div className="modal-body">{children}</div>
+            <div className="modal-footer">
+              {footerBtns.map((btn)=>(
+                <Button type={btn.type} onClick={btn.onClick} innerText={btn.label}/>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -6,12 +6,12 @@ export interface IButton {
   innerText: string;
 }
 
-export interface IModal extends React.PropsWithChildren {
+export interface ICustomModal extends React.PropsWithChildren {
   show: boolean;
   title: string;
   onClose: () => void;
 }
-export interface IAlert extends React.PropsWithChildren {
+export interface ICustomAlert extends React.PropsWithChildren {
   type: 'primary' | 'success' | 'danger' | 'warning';
   onDismiss?: () => void;
   show: boolean;

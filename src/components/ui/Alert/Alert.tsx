@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { IAlert } from '../../../types';
-const Alert: FC<IAlert> = ({ type, onDismiss, show, children }) => {
+import { ICustomAlert } from '../../../types';
+const Alert: FC<ICustomAlert> = ({ type, onDismiss, show, children }) => {
 
   let toggle
 
