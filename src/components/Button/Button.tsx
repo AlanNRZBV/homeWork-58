@@ -1,13 +1,19 @@
 import { FC } from 'react';
 import { IButton } from '../../types';
+import { motion } from 'framer-motion';
 
 const Button: FC<IButton> = ({ type, onClick, innerText }) => {
   const btnStyle = `btn btn-${type}`;
 
   return (
-    <button onClick={onClick} type="button" className={btnStyle}>
+    <motion.button
+      whileHover={{ y: -2 }}
+      onClick={onClick}
+      type="button"
+      className={btnStyle}
+    >
       {innerText}
-    </button>
+    </motion.button>
   );
 };
 
